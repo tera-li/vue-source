@@ -24,6 +24,7 @@ class Watcher {
     let newValue = this.vm[this.key];
     // 新值和旧值相同则不更新
     if (newValue === this.oldValue) return;
+    this.oldValue = newValue;
     // 调用具体的更新方法
     this.cb(newValue);
   }
